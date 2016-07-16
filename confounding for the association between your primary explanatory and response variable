@@ -5,3 +5,74 @@ In the previous analysis, alcol consumption and life expectancy shows significan
 However, R_squared is only 0.089, which means only 9% variation of response variable is catched by explanatory variable.
 When income and/or urban rate is added as explanatory variable, R_squared is increased to more than 0.35. 
 This indicates that income or urban rate can be confounding variable. 
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.089
+Model:                            OLS   Adj. R-squared:                  0.084
+Method:                 Least Squares   F-statistic:                     16.58
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           7.14e-05
+Time:                        05:56:34   Log-Likelihood:                -623.16
+No. Observations:                 171   AIC:                             1250.
+Df Residuals:                     169   BIC:                             1257.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.712     97.450      0.000        67.980    70.791
+alcohol_c      0.5873      0.144      4.072      0.000         0.303     0.872
+==============================================================================
+Omnibus:                       17.256   Durbin-Watson:                   1.825
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               20.026
+Skew:                          -0.821   Prob(JB):                     4.48e-05
+Kurtosis:                       2.658   Cond. No.                         4.94
+==============================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.372
+Model:                            OLS   Adj. R-squared:                  0.365
+Method:                 Least Squares   F-statistic:                     49.79
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           1.05e-17
+Time:                        05:59:13   Log-Likelihood:                -591.37
+No. Observations:                 171   AIC:                             1189.
+Df Residuals:                     168   BIC:                             1198.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.593    117.014      0.000        68.215    70.556
+alcohol_c      0.2731      0.125      2.178      0.031         0.026     0.521
+income_c       0.0005   6.05e-05      8.699      0.000         0.000     0.001
+==============================================================================
+Omnibus:                       18.786   Durbin-Watson:                   1.966
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               22.620
+Skew:                          -0.883   Prob(JB):                     1.23e-05
+Kurtosis:                       2.765   Cond. No.                     1.02e+04
+==============================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.388
+Model:                            OLS   Adj. R-squared:                  0.381
+Method:                 Least Squares   F-statistic:                     53.22
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           1.25e-18
+Time:                        13:09:11   Log-Likelihood:                -589.21
+No. Observations:                 171   AIC:                             1184.
+Df Residuals:                     168   BIC:                             1194.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.586    118.503      0.000        68.230    70.542
+urban_c        0.2428      0.027      9.051      0.000         0.190     0.296
+alcohol_c      0.2785      0.123      2.257      0.025         0.035     0.522
+==============================================================================
+Omnibus:                       13.720   Durbin-Watson:                   1.896
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               15.288
+Skew:                          -0.732   Prob(JB):                     0.000479
+Kurtosis:                       3.003   Cond. No.                         22.8
+==============================================================================
