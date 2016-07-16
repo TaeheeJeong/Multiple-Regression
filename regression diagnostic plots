@@ -1,0 +1,35 @@
+#regression diagnostic plots 
+
+a) q-q plot
+fig1=sm.qqplot(reg3.resid, line='r')
+Please check "qqplot.png".
+
+if the residuals in a Q-Q plt follow a straight line, the residuals are normally distributed.
+In the qqplot, the residuals do not follow a straight line. 
+There is negative deviation at begining, then, positive deviation in the middle, then, negative deviation at the end.
+
+
+b) standardized residuals for all observations
+stdres=pd.DataFrame(reg3.resid_pearson)
+plt.plot(stdres, 'o', ls='None')
+l = plt.axhline(y=0, color='r')
+plt.ylabel('Standardized Residual')
+plt.xlabel('Observation Number')
+
+Please check "stdred.png".
+
+a residual is the difference between the observed response value and the model predicted response value.
+The scattered data points are remained within 2.5 standard deviation.
+Some data points are located out boundary of 2 stardard deviation. 
+This means that there are some outliers, but the outliers are not far away from normal distribution.
+
+c) leverage plot
+fig3=sm.graphics.influence_plot(reg3, size=8)
+print(fig3)
+
+Please check "leverage.png".
+
+A leverage plot is used to identify observations that are outliers and/or have a large influence on model estimation.
+The outliers are mostly located in the higher value of explanatory variables. 
+
+
