@@ -1,0 +1,31 @@
+#Report whether or not your results supported your hypothesis for the association between your primary explanatory response variable.
+
+My initial hypothesis was that alcohol consumption is significantly associated with life expectancy. 
+However, linear regression analysis showed that the association is very weak. 
+R-squared valus is only 0.089.
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.089
+Model:                            OLS   Adj. R-squared:                  0.084
+Method:                 Least Squares   F-statistic:                     16.58
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           7.14e-05
+Time:                        05:56:34   Log-Likelihood:                -623.16
+No. Observations:                 171   AIC:                             1250.
+Df Residuals:                     169   BIC:                             1257.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.712     97.450      0.000        67.980    70.791
+alcohol_c      0.5873      0.144      4.072      0.000         0.303     0.872
+==============================================================================
+Omnibus:                       17.256   Durbin-Watson:                   1.825
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               20.026
+Skew:                          -0.821   Prob(JB):                     4.48e-05
+Kurtosis:                       2.658   Cond. No.                         4.94
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
