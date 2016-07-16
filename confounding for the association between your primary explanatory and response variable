@@ -1,0 +1,7 @@
+#Discuss whether or not there was evidence of confounding for the association between your primary explanatory and response variable.
+
+In the previous analysis, alcol consumption and life expectancy shows significant positive association. 
+(coefficient  0.5873, p-value is 0.000)
+However, R_squared is only 0.089, which means only 9% variation of response variable is catched by explanatory variable.
+When income and/or urban rate is added as explanatory variable, R_squared is increased to more than 0.35. 
+This indicates that income or urban rate can be confounding variable. 
