@@ -1,0 +1,86 @@
+# multiple regression output 
+
+1. linear regression analysis
+reg1 = smf.ols('lifeexpectancy ~ urban_c', data=sub1).fit()
+print (reg1.summary())
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.369
+Model:                            OLS   Adj. R-squared:                  0.366
+Method:                 Least Squares   F-statistic:                     98.95
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           1.22e-18
+Time:                        06:02:03   Log-Likelihood:                -591.76
+No. Observations:                 171   AIC:                             1188.
+Df Residuals:                     169   BIC:                             1194.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.593    117.094      0.000        68.216    70.556
+urban_c        0.2595      0.026      9.947      0.000         0.208     0.311
+==============================================================================
+Omnibus:                       12.611   Durbin-Watson:                   1.867
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               13.928
+Skew:                          -0.699   Prob(JB):                     0.000945
+Kurtosis:                       2.947   Cond. No.                         22.7
+==============================================================================
+
+2. adding variables
+reg2 = smf.ols('lifeexpectancy ~ urban_c + income_c', data=sub1).fit()
+print (reg2.summary())
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.457
+Model:                            OLS   Adj. R-squared:                  0.450
+Method:                 Least Squares   F-statistic:                     70.66
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           5.38e-23
+Time:                        06:03:38   Log-Likelihood:                -578.97
+No. Observations:                 171   AIC:                             1164.
+Df Residuals:                     168   BIC:                             1173.
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.552    125.811      0.000        68.297    70.475
+urban_c        0.1685      0.030      5.630      0.000         0.109     0.228
+income_c       0.0003   6.64e-05      5.206      0.000         0.000     0.000
+==============================================================================
+Omnibus:                       13.651   Durbin-Watson:                   1.901
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               15.407
+Skew:                          -0.730   Prob(JB):                     0.000451
+Kurtosis:                       2.818   Cond. No.                     1.02e+04
+==============================================================================
+
+3. adding more variables
+reg3 = smf.ols('lifeexpectancy ~ urban_c+income_c+alcohol_c', data=sub1).fit()
+print (reg3.summary())
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         lifeexpectancy   R-squared:                       0.465
+Model:                            OLS   Adj. R-squared:                  0.455
+Method:                 Least Squares   F-statistic:                     48.36
+Date:                Sat, 16 Jul 2016   Prob (F-statistic):           1.50e-22
+Time:                        06:04:08   Log-Likelihood:                -577.71
+No. Observations:                 171   AIC:                             1163.
+Df Residuals:                     167   BIC:                             1176.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept     69.3857      0.549    126.370      0.000        68.302    70.470
+urban_c        0.1619      0.030      5.380      0.000         0.102     0.221
+income_c       0.0003    6.7e-05      4.904      0.000         0.000     0.000
+alcohol_c      0.1853      0.117      1.580      0.116        -0.046     0.417
+==============================================================================
+Omnibus:                       13.968   Durbin-Watson:                   1.901
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               15.786
+Skew:                          -0.742   Prob(JB):                     0.000373
+Kurtosis:                       2.897   Cond. No.                     1.02e+04
+==============================================================================
+
