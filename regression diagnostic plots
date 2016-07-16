@@ -27,7 +27,7 @@ c) leverage plot
 fig3=sm.graphics.influence_plot(reg3, size=8)
 print(fig3)
 
-Please check "leverage.png".
+Please check "leverage_plot.png".
 
 A leverage plot is used to identify observations that are outliers and/or have a large influence on model estimation.
 The outliers are mostly located in the higher value of explanatory variables. 
